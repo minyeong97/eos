@@ -1,4 +1,4 @@
-cscope 15 $HOME/Desktop/eos               0000070903
+cscope 15 $HOME/Desktop/eos               0000071137
 	@core/comm.c
 
 8 
@@ -4170,83 +4170,133 @@ TYPE_H_
 	~<c‹e/eos.h
 >
 
-3 
+2 
+	#STACK_SIZE
+ 8096
+
+	)
+
+4 
+öt8u_t
+ 
+	g°ack1
+[
+STACK_SIZE
+];
+
+5 
+öt8u_t
+ 
+	g°ack2
+[
+STACK_SIZE
+];
+
+6 
 eos_tcb_t
  
 	gtcb1
 ;
 
-4 
+7 
 eos_tcb_t
  
 	gtcb2
 ;
 
-5 
-öt8u_t
- 
-	g°ack1
-[8096];
-
-6 
-öt8u_t
- 
-	g°ack2
-[8096];
-
-8 
+10 
 	$¥öt_numbî
-(*
-¨g
+() {
+
+11 
+i
+ = 0;
+
+12 ++
+i
 ) {
 
-11 
+13 
+	`¥ötf
+("%d", 
+i
+);
+
+14 
+	`eos_scheduÀ
+();
+
+15 i‡(
+i
+ == 20) { i = 0; }
+
+17 
 	}
 }
 
-13 
+19 
 	$¥öt_Æphabë
-(*
-¨g
+() {
+
+20 
+i
+ = 96;
+
+21 ++
+i
 ) {
 
-16 
+22 
+	`¥ötf
+("%c", 
+i
+);
+
+23 
+	`eos_scheduÀ
+();
+
+24 i‡(
+i
+ == 122) { i = 96; }
+
+26 
 	}
 }
 
-18 
+28 
 	$eos_u£r_maö
 () {
 
-19 
+29 
 	`eos_¸óã_èsk
 (&
 tcb1
-, (
-addr_t
-)
+, 
 °ack1
-, 8096, 
+, 
+STACK_SIZE
+, 
 ¥öt_numbî
 , 
 NULL
-, 0);
+, 0)
 
-20 
+30 
 	`eos_¸óã_èsk
 (&
 tcb2
-, (
-addr_t
-)
+, 
 °ack2
-, 8096, 
+, 
+STACK_SIZE
+, 
 ¥öt_Æphabë
 , 
 NULL
-, 0);
+, 0)
 
-21 
+31 
 	}
 }
 
