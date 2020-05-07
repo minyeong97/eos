@@ -29,7 +29,20 @@ int32u_t eos_destroy_task(eos_tcb_t *task) {
 }
 
 void eos_schedule() {
+	addr_t sp = _os_save_context();
+	_os_current_task.sp = sp;
+
+	extern tcb1;
+	extern tcb2;
+	
+	if (_os_current_task = &tcb1)
+		_os_current_task = &tcb2;
+	else
+		_os_current_task = &tcb1;
+
+	_os_restore_context(_os_current_task.sp);
 }
+
 
 eos_tcb_t *eos_get_current_task() {
 	return _os_current_task;

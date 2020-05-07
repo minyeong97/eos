@@ -1,4 +1,4 @@
-cscope 15 $HOME/Desktop/eos               0000071137
+cscope 15 $HOME/Desktop/eos               0000071973
 	@core/comm.c
 
 8 
@@ -1577,11 +1577,17 @@ cou¡î
 	stcb
  {
 
-82 } 
-eos_tcb_t
+82 
+addr_t
+ 
+•
 ;
 
-88 
+84 } 
+	teos_tcb_t
+;
+
+90 
 öt32u_t
  
 	`eos_¸óã_èsk
@@ -1605,7 +1611,7 @@ sblock_size
 ¥i‹ôy
 );
 
-93 
+95 
 öt32u_t
  
 	`eos_de°roy_èsk
@@ -1615,17 +1621,17 @@ eos_tcb_t
 èsk
 );
 
-95 
+97 
 	`eos_scheduÀ
 ();
 
-100 
+102 
 eos_tcb_t
  *
 	`eos_gë_cuºít_èsk
 ();
 
-107 
+109 
 	`eos_ch™ge_¥i‹ôy
 (
 eos_tcb_t
@@ -1637,7 +1643,7 @@ eos_tcb_t
 ¥i‹ôy
 );
 
-113 
+115 
 öt32u_t
  
 	`eos_gë_¥i‹ôy
@@ -1647,7 +1653,7 @@ eos_tcb_t
 èsk
 );
 
-122 
+124 
 	`eos_£t_≥riod
 (
 eos_tcb_t
@@ -1659,7 +1665,7 @@ eos_tcb_t
 ≥riod
 );
 
-124 
+126 
 öt32u_t
  
 	`eos_gë_≥riod
@@ -1669,7 +1675,7 @@ eos_tcb_t
 èsk
 );
 
-126 
+128 
 öt32u_t
  
 	`eos_su•íd_èsk
@@ -1679,7 +1685,7 @@ eos_tcb_t
 èsk
 );
 
-128 
+130 
 öt32u_t
  
 	`eos_ªsume_èsk
@@ -1689,7 +1695,7 @@ eos_tcb_t
 èsk
 );
 
-130 
+132 
 	`eos_¶ìp
 (
 öt32u_t
@@ -1697,15 +1703,15 @@ eos_tcb_t
 tick
 );
 
-140 
+142 
 	seos_£m≠h‹e
  {
 
-141 } 
+143 } 
 eos_£m≠h‹e_t
 ;
 
-147 
+149 
 	`eos_öô_£m≠h‹e
 (
 eos_£m≠h‹e_t
@@ -1721,7 +1727,7 @@ eos_£m≠h‹e_t
 queue_ty≥
 );
 
-152 
+154 
 öt32u_t
  
 	`eos_acquúe_£m≠h‹e
@@ -1735,7 +1741,7 @@ eos_£m≠h‹e_t
 timeout
 );
 
-157 
+159 
 	`eos_ªÀa£_£m≠h‹e
 (
 eos_£m≠h‹e_t
@@ -1743,27 +1749,27 @@ eos_£m≠h‹e_t
 £m
 );
 
-162 
+164 
 	seos_c⁄dôi⁄
  {
 
-163 
+165 
 _os_node_t
  *
 waô_queue
 ;
 
-164 
+166 
 öt8u_t
  
 queue_ty≥
 ;
 
-165 } 
+167 } 
 	teos_c⁄dôi⁄_t
 ;
 
-171 
+173 
 	`eos_öô_c⁄dôi⁄
 (
 eos_c⁄dôi⁄_t
@@ -1775,7 +1781,7 @@ c⁄d
 queue_ty≥
 );
 
-176 
+178 
 	`eos_waô_c⁄dôi⁄
 (
 eos_c⁄dôi⁄_t
@@ -1787,7 +1793,7 @@ eos_£m≠h‹e_t
 muãx
 );
 
-181 
+183 
 	`eos_nŸify_c⁄dôi⁄
 (
 eos_c⁄dôi⁄_t
@@ -1795,13 +1801,13 @@ eos_c⁄dôi⁄_t
 c⁄d
 );
 
-192 
+194 
 öt32s_t
  
 	`eos_gë_úq
 ();
 
-197 
+199 
 	`eos_ack_úq
 (
 öt32u_t
@@ -1809,17 +1815,17 @@ c⁄d
 úq
 );
 
-204 
+206 
 	`eos_íabÀ_öãºu±
 ();
 
-210 
+212 
 öt32u_t
  
 	`eos_dißbÀ_öãºu±
 ();
 
-215 
+217 
 	`eos_ª°‹e_öãºu±
 (
 öt32u_t
@@ -1827,7 +1833,7 @@ c⁄d
 Êag
 );
 
-220 
+222 
 	`eos_íabÀ_úq_löe
 (
 öt32u_t
@@ -1835,7 +1841,7 @@ c⁄d
 úq
 );
 
-225 
+227 
 	`eos_dißbÀ_úq_löe
 (
 öt32u_t
@@ -1843,15 +1849,15 @@ c⁄d
 úq
 );
 
-235 
+237 
 	seos_mqueue
  {
 
-236 } 
+238 } 
 eos_mqueue_t
 ;
 
-242 
+244 
 	`eos_öô_mqueue
 (
 eos_mqueue_t
@@ -1871,7 +1877,7 @@ msg_size
 queue_ty≥
 );
 
-247 
+249 
 öt8u_t
  
 	`eos_£nd_mesßge
@@ -1887,7 +1893,7 @@ mesßge
 timeout
 );
 
-252 
+254 
 öt8u_t
  
 	`eos_ª˚ive_mesßge
@@ -3034,24 +3040,72 @@ eos_tcb_t
 () {
 
 32 
+addr_t
+ 
+•
+ = 
+	`_os_ßve_c⁄ãxt
+();
+
+33 
+_os_cuºít_èsk
+.
+•
+ = sp;
+
+35 
+tcb1
+;
+
+36 
+tcb2
+;
+
+38 i‡(
+_os_cuºít_èsk
+ = &
+tcb1
+)
+
+39 
+_os_cuºít_èsk
+ = &
+tcb2
+;
+
+41 
+_os_cuºít_èsk
+ = &
+tcb1
+;
+
+43 
+	`_os_ª°‹e_c⁄ãxt
+(
+_os_cuºít_èsk
+.
+•
+);
+
+44 
 	}
 }
 
-34 
+47 
 eos_tcb_t
  *
 	$eos_gë_cuºít_èsk
 () {
 
-35  
+48  
 _os_cuºít_èsk
 ;
 
-36 
+49 
 	}
 }
 
-38 
+51 
 	$eos_ch™ge_¥i‹ôy
 (
 eos_tcb_t
@@ -3063,11 +3117,11 @@ eos_tcb_t
 ¥i‹ôy
 ) {
 
-39 
+52 
 	}
 }
 
-41 
+54 
 öt32u_t
  
 	$eos_gë_¥i‹ôy
@@ -3077,11 +3131,11 @@ eos_tcb_t
 èsk
 ) {
 
-42 
+55 
 	}
 }
 
-44 
+57 
 	$eos_£t_≥riod
 (
 eos_tcb_t
@@ -3093,11 +3147,11 @@ eos_tcb_t
 ≥riod
 ){
 
-45 
+58 
 	}
 }
 
-47 
+60 
 öt32u_t
  
 	$eos_gë_≥riod
@@ -3107,11 +3161,11 @@ eos_tcb_t
 èsk
 ) {
 
-48 
+61 
 	}
 }
 
-50 
+63 
 öt32u_t
  
 	$eos_su•íd_èsk
@@ -3121,11 +3175,11 @@ eos_tcb_t
 èsk
 ) {
 
-51 
+64 
 	}
 }
 
-53 
+66 
 öt32u_t
  
 	$eos_ªsume_èsk
@@ -3135,11 +3189,11 @@ eos_tcb_t
 èsk
 ) {
 
-54 
+67 
 	}
 }
 
-56 
+69 
 	$eos_¶ìp
 (
 öt32u_t
@@ -3147,37 +3201,37 @@ eos_tcb_t
 tick
 ) {
 
-57 
+70 
 	}
 }
 
-59 
+72 
 	$_os_öô_èsk
 () {
 
-60 
+73 
 	`PRINT
 ("initializingÅask module.\n");
 
-63 
+76 
 _os_cuºít_èsk
  = 
 NULL
 ;
 
-66 
+79 
 öt32u_t
  
 i
 ;
 
-67 
+80 
 i
  = 0; i < 
 LOWEST_PRIORITY
 ; i++) {
 
-68 
+81 
 _os_ªady_queue
 [
 i
@@ -3185,11 +3239,11 @@ i
 NULL
 ;
 
-70 
+83 
 	}
 }
 
-72 
+85 
 	$_os_waô
 (
 _os_node_t
@@ -3197,11 +3251,11 @@ _os_node_t
 waô_queue
 ) {
 
-73 
+86 
 	}
 }
 
-75 
+88 
 	$_os_wakeup_sögÀ
 (
 _os_node_t
@@ -3213,11 +3267,11 @@ waô_queue
 queue_ty≥
 ) {
 
-76 
+89 
 	}
 }
 
-78 
+91 
 	$_os_wakeup_Æl
 (
 _os_node_t
@@ -3229,17 +3283,17 @@ waô_queue
 queue_ty≥
 ) {
 
-79 
+92 
 	}
 }
 
-81 
+94 
 	$_os_wakeup_¶ìpög_èsk
 (*
 ¨g
 ) {
 
-82 
+95 
 	}
 }
 
@@ -3454,10 +3508,82 @@ size_t
 ) {
 
 20 
+öt32u_t
+ *
+±r
+ = 
+°ack_ba£
+;
+
+21 *
+±r
+ = 
+NULL
+;
+
+22 *(
+±r
+ + 1Ë
+NULL
+;
+
+23 *(
+±r
+ + 2Ë
+íåy
+;
+
+24 *(
+±r
+ + 3) = 1;
+
+25 *(
+±r
+ + 4Ë
+NULL
+;
+
+26 *(
+±r
+ + 5Ë
+NULL
+;
+
+27 *(
+±r
+ + 6Ë
+NULL
+;
+
+28 *(
+±r
+ + 7Ë
+NULL
+;
+
+29 *(
+±r
+ + 8Ë
+NULL
+;
+
+30 *(
+±r
+ + 9Ë
+NULL
+;
+
+32  (
+addr_t
+)(
+±r
+ + 9);
+
+33 
 	}
 }
 
-22 
+35 
 	$_os_ª°‹e_c⁄ãxt
 (
 addr_t
@@ -3465,17 +3591,54 @@ addr_t
 •
 ) {
 
-23 
+36 
+__asm__
+ 
+	`__vﬁ©ûe__
+("\
+ % , %%esp;\
+ %%edi;\
+ %%esi;\
+ %%ebx;\
+ %%edx;\
+ %%ecx;\
+ %%eax;\
+ %0;\
+;"
+
+47 
 	}
 }
 
-25 
+49 
 addr_t
  
 	$_os_ßve_c⁄ãxt
 () {
 
-26 
+50 
+__asm__
+ 
+	`__vﬁ©ûe__
+("\
+ 4(%%ebp);\
+ $0;\
+ %%eax;\
+ %%ecx;\
+ %%edx;\
+ %%ebx;\
+ %%esi;\
+ %%edi;\
+ 4(%%ebp);\
+ (%%ebp);\
+ %%esp, %%eax;\
+ $8, %%eax;"
+
+63 :: "Ù"(
+_eÊags
+));
+
+64 
 	}
 }
 
