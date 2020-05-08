@@ -44,10 +44,10 @@ void _os_restore_context(addr_t sp) {
 		popl %%edx;\
 		popl %%ecx;\
 		popl %%eax;\
-		popl %0;\
-		ret;"
+		popl %0;"
 		:"=r"(_eflags):"r"(sp));
-			
+		
+	PRINT("%d \n", _eflags);
 }
 
 addr_t _os_save_context() {
