@@ -1,4 +1,4 @@
-cscope 15 $HOME/Desktop/eos               0000071995
+cscope 15 $HOME/Projects/eos               0000072101
 	@core/comm.c
 
 8 
@@ -3039,7 +3039,19 @@ eos_tcb_t
 	$eos_scheduÀ
 () {
 
-32 
+32 i‡(
+_os_cuºít_èsk
+ =
+NULL
+) {
+
+33 
+_os_cuºít_èsk
+ = &
+tcb1
+;
+
+35 
 addr_t
  
 •
@@ -3047,39 +3059,39 @@ addr_t
 	`_os_ßve_c⁄ãxt
 ();
 
-33 
+36 
 _os_cuºít_èsk
-.
+->
 •
  = sp;
 
-35 
+38 
 tcb1
 ;
 
-36 
+39 
 tcb2
 ;
 
-38 i‡(
+41 i‡(
 _os_cuºít_èsk
  = &
 tcb1
 )
 
-39 
+42 
 _os_cuºít_èsk
  = &
 tcb2
 ;
 
-41 
+44 
 _os_cuºít_èsk
  = &
 tcb1
 ;
 
-43 
+47 
 	`_os_ª°‹e_c⁄ãxt
 (
 _os_cuºít_èsk
@@ -3087,25 +3099,25 @@ _os_cuºít_èsk
 •
 );
 
-44 
+48 
 	}
 }
 
-47 
+51 
 eos_tcb_t
  *
 	$eos_gë_cuºít_èsk
 () {
 
-48  
+52  
 _os_cuºít_èsk
 ;
 
-49 
+53 
 	}
 }
 
-51 
+55 
 	$eos_ch™ge_¥i‹ôy
 (
 eos_tcb_t
@@ -3117,11 +3129,11 @@ eos_tcb_t
 ¥i‹ôy
 ) {
 
-52 
+56 
 	}
 }
 
-54 
+58 
 öt32u_t
  
 	$eos_gë_¥i‹ôy
@@ -3131,11 +3143,11 @@ eos_tcb_t
 èsk
 ) {
 
-55 
+59 
 	}
 }
 
-57 
+61 
 	$eos_£t_≥riod
 (
 eos_tcb_t
@@ -3147,11 +3159,11 @@ eos_tcb_t
 ≥riod
 ){
 
-58 
+62 
 	}
 }
 
-60 
+64 
 öt32u_t
  
 	$eos_gë_≥riod
@@ -3161,11 +3173,11 @@ eos_tcb_t
 èsk
 ) {
 
-61 
+65 
 	}
 }
 
-63 
+67 
 öt32u_t
  
 	$eos_su•íd_èsk
@@ -3175,11 +3187,11 @@ eos_tcb_t
 èsk
 ) {
 
-64 
+68 
 	}
 }
 
-66 
+70 
 öt32u_t
  
 	$eos_ªsume_èsk
@@ -3189,11 +3201,11 @@ eos_tcb_t
 èsk
 ) {
 
-67 
+71 
 	}
 }
 
-69 
+73 
 	$eos_¶ìp
 (
 öt32u_t
@@ -3201,37 +3213,37 @@ eos_tcb_t
 tick
 ) {
 
-70 
+74 
 	}
 }
 
-72 
+76 
 	$_os_öô_èsk
 () {
 
-73 
+77 
 	`PRINT
 ("initializingÅask module.\n");
 
-76 
+80 
 _os_cuºít_èsk
  = 
 NULL
 ;
 
-79 
+83 
 öt32u_t
  
 i
 ;
 
-80 
+84 
 i
  = 0; i < 
 LOWEST_PRIORITY
 ; i++) {
 
-81 
+85 
 _os_ªady_queue
 [
 i
@@ -3239,11 +3251,11 @@ i
 NULL
 ;
 
-83 
+87 
 	}
 }
 
-85 
+89 
 	$_os_waô
 (
 _os_node_t
@@ -3251,11 +3263,11 @@ _os_node_t
 waô_queue
 ) {
 
-86 
+90 
 	}
 }
 
-88 
+92 
 	$_os_wakeup_sögÀ
 (
 _os_node_t
@@ -3267,11 +3279,11 @@ waô_queue
 queue_ty≥
 ) {
 
-89 
+93 
 	}
 }
 
-91 
+95 
 	$_os_wakeup_Æl
 (
 _os_node_t
@@ -3283,17 +3295,17 @@ waô_queue
 queue_ty≥
 ) {
 
-92 
+96 
 	}
 }
 
-94 
+98 
 	$_os_wakeup_¶ìpög_èsk
 (*
 ¨g
 ) {
 
-95 
+99 
 	}
 }
 
@@ -3592,11 +3604,15 @@ addr_t
 ) {
 
 36 
+_eÊags
+;
+
+37 
 __asm__
  
 	`__vﬁ©ûe__
 ("\
- % , %%esp;\
+ %1, %%esp;\
  %%edi;\
  %%esi;\
  %%ebx;\
@@ -3606,21 +3622,27 @@ __asm__
  %0;\
 ;"
 
-46 :"Ù"(
+47 :"Ù"(
 _eÊags
-):);
+):"r"(
+•
+));
 
-48 
+49 
 	}
 }
 
-50 
+51 
 addr_t
  
 	$_os_ßve_c⁄ãxt
 () {
 
-51 
+52 
+_eÊags
+;
+
+53 
 __asm__
  
 	`__vﬁ©ûe__
@@ -3638,11 +3660,11 @@ __asm__
  %%esp, %%eax;\
  $8, %%eax;"
 
-64 :: "Ù"(
+66 :: "r"(
 _eÊags
 ));
 
-65 
+67 
 	}
 }
 
