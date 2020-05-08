@@ -46,7 +46,7 @@ void eos_schedule() {
 			_os_current_task = &tcb1;
 	}
 
-	_os_restore_context(_os_current_task.sp);
+	_os_restore_context(_os_current_task->sp);
 }
 
 
