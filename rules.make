@@ -41,9 +41,9 @@ banner:
 
 %.o: %.c
 ifeq ($(shell pwd), $(PWD)/user)
-	$(CC) -g -c -Os -Wall -I$(HPATH) -o $@ $< 
+	$(CC) -g -c -Wall -I$(HPATH) -o $@ $< 
 else
-	$(CC) -g -c -Os -Wall -D_KERNEL_ -I$(HPATH) -o $@ $< 
+	$(CC) -g -c -Wall -D_KERNEL_ -I$(HPATH) -o $@ $< 
 endif
 
 %.o: %.S
