@@ -45,7 +45,7 @@ void _os_restore_context(addr_t sp) {
 		popl %%ecx;\
 		popl %%eax;\
 		popl %0;"
-		:"=r"(_eflags):"r"(sp));
+		:"=m"(_eflags):"m"(sp));
 		
 	PRINT("%d \n", _eflags);
 }
