@@ -23,6 +23,7 @@ static eos_tcb_t *_os_current_task;
 
 int32u_t eos_create_task(eos_tcb_t *task, addr_t sblock_start, size_t sblock_size, void (*entry)(void *arg), void *arg, int32u_t priority) {
 	PRINT("task: 0x%x, priority: %d\n", (int32u_t)task, priority);
+	task->sp = _os_create_context(sblock_start, sblock_size, entry, arg);
 }
 
 int32u_t eos_destroy_task(eos_tcb_t *task) {

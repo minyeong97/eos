@@ -1,4 +1,4 @@
-cscope 15 $HOME/Projects/eos               0000072101
+cscope 15 $HOME/Projects/eos               0000072132
 	@core/comm.c
 
 8 
@@ -3039,19 +3039,27 @@ eos_tcb_t
 	$eos_scheduÀ
 () {
 
-32 i‡(
+32 
+tcb1
+;
+
+33 
+tcb2
+;
+
+34 i‡(
 _os_cuºít_èsk
  =
 NULL
 ) {
 
-33 
+35 
 _os_cuºít_èsk
  = &
 tcb1
 ;
 
-35 
+37 
 addr_t
  
 •
@@ -3059,65 +3067,65 @@ addr_t
 	`_os_ßve_c⁄ãxt
 ();
 
-36 
+38 
 _os_cuºít_èsk
 ->
 •
  = sp;
 
-38 
+40 
 tcb1
 ;
 
-39 
+41 
 tcb2
 ;
 
-41 i‡(
+43 i‡(
 _os_cuºít_èsk
  = &
 tcb1
 )
 
-42 
+44 
 _os_cuºít_èsk
  = &
 tcb2
 ;
 
-44 
+46 
 _os_cuºít_èsk
  = &
 tcb1
 ;
 
-47 
+49 
 	`_os_ª°‹e_c⁄ãxt
 (
 _os_cuºít_èsk
-.
+->
 •
 );
 
-48 
+50 
 	}
 }
 
-51 
+53 
 eos_tcb_t
  *
 	$eos_gë_cuºít_èsk
 () {
 
-52  
+54  
 _os_cuºít_èsk
 ;
 
-53 
+55 
 	}
 }
 
-55 
+57 
 	$eos_ch™ge_¥i‹ôy
 (
 eos_tcb_t
@@ -3129,11 +3137,11 @@ eos_tcb_t
 ¥i‹ôy
 ) {
 
-56 
+58 
 	}
 }
 
-58 
+60 
 öt32u_t
  
 	$eos_gë_¥i‹ôy
@@ -3143,11 +3151,11 @@ eos_tcb_t
 èsk
 ) {
 
-59 
+61 
 	}
 }
 
-61 
+63 
 	$eos_£t_≥riod
 (
 eos_tcb_t
@@ -3159,11 +3167,11 @@ eos_tcb_t
 ≥riod
 ){
 
-62 
+64 
 	}
 }
 
-64 
+66 
 öt32u_t
  
 	$eos_gë_≥riod
@@ -3173,11 +3181,11 @@ eos_tcb_t
 èsk
 ) {
 
-65 
+67 
 	}
 }
 
-67 
+69 
 öt32u_t
  
 	$eos_su•íd_èsk
@@ -3187,11 +3195,11 @@ eos_tcb_t
 èsk
 ) {
 
-68 
+70 
 	}
 }
 
-70 
+72 
 öt32u_t
  
 	$eos_ªsume_èsk
@@ -3201,11 +3209,11 @@ eos_tcb_t
 èsk
 ) {
 
-71 
+73 
 	}
 }
 
-73 
+75 
 	$eos_¶ìp
 (
 öt32u_t
@@ -3213,37 +3221,37 @@ eos_tcb_t
 tick
 ) {
 
-74 
+76 
 	}
 }
 
-76 
+78 
 	$_os_öô_èsk
 () {
 
-77 
+79 
 	`PRINT
 ("initializingÅask module.\n");
 
-80 
+82 
 _os_cuºít_èsk
  = 
 NULL
 ;
 
-83 
+85 
 öt32u_t
  
 i
 ;
 
-84 
+86 
 i
  = 0; i < 
 LOWEST_PRIORITY
 ; i++) {
 
-85 
+87 
 _os_ªady_queue
 [
 i
@@ -3251,11 +3259,11 @@ i
 NULL
 ;
 
-87 
+89 
 	}
 }
 
-89 
+91 
 	$_os_waô
 (
 _os_node_t
@@ -3263,11 +3271,11 @@ _os_node_t
 waô_queue
 ) {
 
-90 
+92 
 	}
 }
 
-92 
+94 
 	$_os_wakeup_sögÀ
 (
 _os_node_t
@@ -3279,11 +3287,11 @@ waô_queue
 queue_ty≥
 ) {
 
-93 
+95 
 	}
 }
 
-95 
+97 
 	$_os_wakeup_Æl
 (
 _os_node_t
@@ -3295,17 +3303,17 @@ waô_queue
 queue_ty≥
 ) {
 
-96 
+98 
 	}
 }
 
-98 
+100 
 	$_os_wakeup_¶ìpög_èsk
 (*
 ¨g
 ) {
 
-99 
+101 
 	}
 }
 
@@ -4469,7 +4477,7 @@ STACK_SIZE
 ¥öt_numbî
 , 
 NULL
-, 0)
+, 0);
 
 30 
 	`eos_¸óã_èsk
@@ -4483,7 +4491,7 @@ STACK_SIZE
 ¥öt_Æphabë
 , 
 NULL
-, 0)
+, 0);
 
 31 
 	}
