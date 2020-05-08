@@ -28,6 +28,7 @@ addr_t _os_create_context(addr_t stack_base, size_t stack_size, void (*entry)(vo
 	*(ptr + 7) = NULL;
 	*(ptr + 8) = NULL;
 	*(ptr + 9) = NULL;
+	PRINT("%p\n", ptr+9);
 
 	return (addr_t)(ptr + 9);
 }
