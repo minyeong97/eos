@@ -36,6 +36,7 @@ addr_t _os_create_context(addr_t stack_base, size_t stack_size, void (*entry)(vo
 void _os_restore_context(addr_t sp) {
 	PRINT("%p\n", sp);
 	extern _eflags;
+	int a;
 	__asm__ __volatile__("\
 		movl %1, %%esp;\
 		popl %%edi;\
@@ -45,7 +46,7 @@ void _os_restore_context(addr_t sp) {
 		popl %%ecx;\
 		popl %%eax;\
 		popl %0;"
-		:"=m"(_eflags):"m"(sp));
+		:"=m"(a):"m"(sp));
 		
 	PRINT("%d \n", _eflags);
 }
