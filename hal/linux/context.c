@@ -17,20 +17,20 @@ void print_context(addr_t context) {
 }
 
 addr_t _os_create_context(addr_t stack_base, size_t stack_size, void (*entry)(void *), void *arg) {
-	int32u_t *ptr = stack_base;
+	int32u_t *ptr = stack_base + stack_size / 4 - 1;
 	*ptr = NULL;
-	*(ptr + 1) = 9;
-	*(ptr + 2) = 8;
-	*(ptr + 3) = 1;
-	*(ptr + 4) = 2;
-	*(ptr + 5) = 3;
-	*(ptr + 6) = 4;
-	*(ptr + 7) = 5;
-	*(ptr + 8) = 6;
-	*(ptr + 9) = 7;
-	PRINT("%p entry:%p\n", ptr+9, entry);
+	*(ptr - 0) = 7;
+	*(ptr - 1) = 9;
+	*(ptr - 2) = 8;
+	*(ptr - 3) = 1;
+	*(ptr - 4) = 2;
+	*(ptr - 5) = 3;
+	*(ptr - 6) = 4;
+	*(ptr - 7) = 5;
+	*(ptr - 8) = 6;
+	PRINT("%p entry:%p\n", ptr-9, entry);
 
-	return (addr_t)(ptr + 9);
+	return (addr_t)(ptr - 8);
 }
 
 void _os_restore_context(addr_t sp) {
