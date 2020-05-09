@@ -42,7 +42,7 @@ void eos_schedule() {
 		extern tcb1;
 		extern tcb2;
 		
-		if (_os_current_task = &tcb1)
+		if (_os_current_task == &tcb1)
 			_os_current_task = &tcb2;
 		else
 			_os_current_task = &tcb1;
