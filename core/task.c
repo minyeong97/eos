@@ -36,10 +36,6 @@ void eos_schedule() {
 	if (_os_current_task == NULL) {
 		_os_current_task = &tcb1;
 	} else {
-		addr_t sp = _os_save_context();
-		if (sp == NULL) return;
-		_os_current_task->sp = sp;
-
 		extern tcb1;
 		extern tcb2;
 		
@@ -47,6 +43,11 @@ void eos_schedule() {
 			_os_current_task = &tcb2;
 		else
 			_os_current_task = &tcb1;
+
+		addr_t sp = _os_save_context();
+		if (sp == NULL) return;
+
+		_os_current_task->sp = sp;
 	}
 
 	_os_restore_context(_os_current_task->sp);
