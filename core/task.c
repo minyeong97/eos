@@ -30,7 +30,6 @@ int32u_t eos_destroy_task(eos_tcb_t *task) {
 }
 
 void eos_schedule() {
-	PRINT("schedule!\n");
 	extern tcb1;
 	extern tcb2;
 	if (_os_current_task == NULL) {
@@ -40,9 +39,6 @@ void eos_schedule() {
 		if (sp == NULL) return;
 
 		_os_current_task->sp = sp;
-
-		extern tcb1;
-		extern tcb2;
 		
 		if (_os_current_task == &tcb1)
 			_os_current_task = &tcb2;
