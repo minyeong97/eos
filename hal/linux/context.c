@@ -21,7 +21,7 @@ addr_t _os_create_context(addr_t stack_base, size_t stack_size, void (*entry)(vo
 	*ptr = arg;
 	*(ptr - 0) = NULL;
 	*(ptr - 1) = entry;
-	*(ptr - 2) = 1;
+	*(ptr - 2) = 0;
 	*(ptr - 3) = NULL;
 	*(ptr - 4) = NULL;
 	*(ptr - 5) = NULL;
