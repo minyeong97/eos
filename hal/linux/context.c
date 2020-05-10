@@ -55,7 +55,7 @@ void _os_restore_context(addr_t sp) {
 addr_t _os_save_context() {
 	extern _eflags;
 	__asm__ __volatile__("\
-		pushl 4(%%ebp);\
+		pushl $resume_eip;\
 		pushl $0;\
 		pushl %%eax;\
 		pushl %%ecx;\
@@ -66,6 +66,7 @@ addr_t _os_save_context() {
 		pushl 4(%%ebp);\
 		pushl (%%ebp);\
 		movl %%esp, %%eax;\
-		addl $8, %%eax;"	
+		addl $8, %%eax;\
+	resume_eip:"	
 		:: "r"(_eflags));
 }
