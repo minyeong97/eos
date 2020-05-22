@@ -1,4 +1,4 @@
-cscope 15 $HOME/Desktop/eos               0000073562
+cscope 15 $HOME/Projects/eos               0000073615
 	@core/comm.c
 
 8 
@@ -3078,10 +3078,16 @@ _os_ªady_queue
 );
 
 32 
+	`_os_£t_ªady
+(
+¥i‹ôy
+ & 0xFF);
+
+33 
 	}
 }
 
-34 
+35 
 öt32u_t
  
 	$eos_de°roy_èsk
@@ -3091,21 +3097,21 @@ eos_tcb_t
 èsk
 ) {
 
-35 
+36 
 	}
 }
 
-37 
+38 
 	$eos_scheduÀ
 () {
 
-38 if(
+39 if(
 _os_cuºít_èsk
  !
 NULL
 )
 
-40 
+41 
 addr_t
  
 •
@@ -3113,55 +3119,19 @@ addr_t
 	`_os_ßve_c⁄ãxt
 ();
 
-41 if(
+42 if(
 •
  =
 NULL
 ) ;
 
-43 
+44 
 _os_cuºít_èsk
 ->
 •
  = sp;
 
-44 
-_os_node_t
- *
-√w_node
- = 
-	`mÆloc
-((_os_node_t));
-
-45 
-√w_node
-->
-±r_d©a
- = (*)
-_os_cuºít_èsk
-;
-
-46 
-√w_node
-->
-¥i‹ôy
- = 
-_os_cuºít_èsk
-->priority;
-
 47 
-	`_os_add_node_èû
-(&(
-_os_ªady_queue
-[
-_os_cuºít_èsk
-->
-¥i‹ôy
-]), 
-√w_node
-);
-
-50 
 öt32u_t
  
 ¥i‹ôy
@@ -3169,7 +3139,7 @@ _os_cuºít_èsk
 	`_os_gë_highe°_¥i‹ôy
 ();
 
-51 
+48 
 _os_node_t
  *
 node
@@ -3179,7 +3149,7 @@ _os_ªady_queue
 ¥i‹ôy
 ];
 
-52 
+49 
 _os_cuºít_èsk
  = (
 eos_tcb_t
@@ -3189,21 +3159,29 @@ node
 ±r_d©a
 );
 
-53 
+50 
 	`_os_ªmove_node
-(
+(&(
 _os_ªady_queue
-, 
+[
+¥i‹ôy
+]), 
 node
 );
 
-54 
+51 
 	`‰ì
 (
 node
 );
 
-56 
+52 
+	`_os_un£t_ªady
+(
+¥i‹ôy
+ & 0xFF);
+
+54 
 	`_os_ª°‹e_c⁄ãxt
 (
 _os_cuºít_èsk
@@ -3211,25 +3189,25 @@ _os_cuºít_èsk
 •
 );
 
-57 
+55 
 	}
 }
 
-59 
+57 
 eos_tcb_t
  *
 	$eos_gë_cuºít_èsk
 () {
 
-60  
+58  
 _os_cuºít_èsk
 ;
 
-61 
+59 
 	}
 }
 
-63 
+61 
 	$eos_ch™ge_¥i‹ôy
 (
 eos_tcb_t
@@ -3241,11 +3219,11 @@ eos_tcb_t
 ¥i‹ôy
 ) {
 
-64 
+62 
 	}
 }
 
-66 
+64 
 öt32u_t
  
 	$eos_gë_¥i‹ôy
@@ -3255,11 +3233,11 @@ eos_tcb_t
 èsk
 ) {
 
-67 
+65 
 	}
 }
 
-69 
+67 
 	$eos_£t_≥riod
 (
 eos_tcb_t
@@ -3271,17 +3249,17 @@ eos_tcb_t
 ≥riod
 ){
 
-70 
+68 
 èsk
 ->
 ≥riod
  =Öeriod;
 
-71 
+69 
 	}
 }
 
-73 
+71 
 öt32u_t
  
 	$eos_gë_≥riod
@@ -3291,11 +3269,11 @@ eos_tcb_t
 èsk
 ) {
 
-74 
+72 
 	}
 }
 
-76 
+74 
 öt32u_t
  
 	$eos_su•íd_èsk
@@ -3305,11 +3283,11 @@ eos_tcb_t
 èsk
 ) {
 
-77 
+75 
 	}
 }
 
-79 
+77 
 öt32u_t
  
 	$eos_ªsume_èsk
@@ -3319,11 +3297,11 @@ eos_tcb_t
 èsk
 ) {
 
-80 
+78 
 	}
 }
 
-82 
+80 
 	$eos_¶ìp
 (
 öt32u_t
@@ -3331,11 +3309,11 @@ eos_tcb_t
 tick
 ) {
 
-83 
+81 
 sy°em_timî
 ;
 
-84 
+82 
 eos_Æ¨m_t
  *
 √w_Æ¨m
@@ -3343,7 +3321,7 @@ eos_Æ¨m_t
 	`mÆloc
 ((eos_alarm_t));
 
-86 
+84 
 	`eos_£t_Æ¨m
 (&
 sy°em_timî
@@ -3357,41 +3335,41 @@ _os_cuºít_èsk
 	`_os_wakeup_¶ìpög_èsk
 (), _os_current_task);
 
-88 
+86 
 	`eos_scheduÀ
 ();
 
-89 
+87 
 	}
 }
 
-91 
+89 
 	$_os_öô_èsk
 () {
 
-92 
+90 
 	`PRINT
 ("initializingÅask module.\n");
 
-95 
+93 
 _os_cuºít_èsk
  = 
 NULL
 ;
 
-98 
+96 
 öt32u_t
  
 i
 ;
 
-99 
+97 
 i
  = 0; i < 
 LOWEST_PRIORITY
 ; i++) {
 
-100 
+98 
 _os_ªady_queue
 [
 i
@@ -3399,11 +3377,11 @@ i
 NULL
 ;
 
-102 
+100 
 	}
 }
 
-104 
+102 
 	$_os_waô
 (
 _os_node_t
@@ -3411,11 +3389,11 @@ _os_node_t
 waô_queue
 ) {
 
-105 
+103 
 	}
 }
 
-107 
+105 
 	$_os_wakeup_sögÀ
 (
 _os_node_t
@@ -3427,11 +3405,11 @@ waô_queue
 queue_ty≥
 ) {
 
-108 
+106 
 	}
 }
 
-110 
+108 
 	$_os_wakeup_Æl
 (
 _os_node_t
@@ -3443,15 +3421,31 @@ waô_queue
 queue_ty≥
 ) {
 
-111 
+109 
 	}
 }
 
-113 
+111 
 	$_os_wakeup_¶ìpög_èsk
 (*
 ¨g
 ) {
+
+112 
+eos_tcb_t
+ *
+èsk
+ = 
+¨g
+;
+
+113 
+	`_os_£t_ªady
+((
+èsk
+->
+¥i‹ôy
+) & 0xFF);
 
 114 
 	}
@@ -3523,25 +3517,53 @@ timeout
 ¨g
 ), *arg) {
 
-19 
+19 if(
+timeout
+ =0 || 
+íåy
+ =
+NULL
+) ;
+
+21 
+Æ¨m
+->
+timeout
+ =Åimeout;
+
+22 
+Æ¨m
+->
+h™dÀr
+ = 
+íåy
+;
+
+23 
+Æ¨m
+->
+¨g
+ =árg;
+
+25 
 	}
 }
 
-21 
+27 
 eos_cou¡î_t
 * 
 	$eos_gë_sy°em_timî
 () {
 
-22  &
+28  &
 sy°em_timî
 ;
 
-23 
+29 
 	}
 }
 
-25 
+31 
 	$eos_åiggî_cou¡î
 (
 eos_cou¡î_t
@@ -3549,15 +3571,15 @@ eos_cou¡î_t
 cou¡î
 ) {
 
-26 
+32 
 	`PRINT
 ("tick\n");
 
-27 
+33 
 	}
 }
 
-30 
+36 
 	$timî_öãºu±_h™dÀr
 (
 öt8s_t
@@ -3567,27 +3589,27 @@ cou¡î
 ¨g
 ) {
 
-32 
+38 
 	`eos_åiggî_cou¡î
 (&
 sy°em_timî
 );
 
-33 
+39 
 	}
 }
 
-35 
+41 
 	$_os_öô_timî
 () {
 
-36 
+42 
 	`eos_öô_cou¡î
 (&
 sy°em_timî
 , 0);
 
-39 
+45 
 	`eos_£t_öãºu±_h™dÀr
 (
 IRQ_INTERVAL_TIMER0
@@ -3597,7 +3619,7 @@ timî_öãºu±_h™dÀr
 NULL
 );
 
-40 
+46 
 	}
 }
 

@@ -21,7 +21,11 @@ void eos_set_alarm(eos_counter_t* counter, eos_alarm_t* alarm, int32u_t timeout,
 	alarm->timeout = timeout;
 	alarm->handler = entry;
 	alarm->arg = arg;
-	
+
+	_os_node_t *new_node = malloc(sizeof(struct _os_node_t));
+	new_node->ptr_data = (void *) alarm;
+	new_node->priority = timeout;
+	_os_add_node_priority(&(counter->alarm_queue), new_node);	
 }
 
 eos_counter_t* eos_get_system_timer() {
@@ -30,6 +34,14 @@ eos_counter_t* eos_get_system_timer() {
 
 void eos_trigger_counter(eos_counter_t* counter) {
 	PRINT("tick\n");
+	counter->tick++;
+	if(counter->tick == counter->alarm_queue->timeout) {
+		_os_node_t *node = counter->alarm_queue;
+		eos_alarm_t *alarm = (eos_alarm_t *)(node->ptr_data);
+		void (*handler)(void *arg) = alarm->handler;
+		void *arg = alarm->arg;
+		_os_remove_node(&(counter->alarm_queue), counter->alarm_queue);
+		handler(arg);
 }
 
 /* Timer interrupt handler */

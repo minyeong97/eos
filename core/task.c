@@ -83,7 +83,7 @@ void eos_sleep(int32u_t tick) {
 	extern system_timer;
 	eos_alarm_t *new_alarm = malloc(sizeof(struct eos_alarm_t));
 
-	eos_set_alarm(&system_timer, new_alarm, _os_current_task->period, _os_wakeup_sleeping_task(), _os_current_task);
+	eos_set_alarm(&system_timer, new_alarm, system_timer->tick+_os_current_task->period, _os_wakeup_sleeping_task(), _os_current_task);
 
 	eos_schedule();
 }
@@ -111,4 +111,10 @@ void _os_wakeup_all(_os_node_t **wait_queue, int32u_t queue_type) {
 }
 
 void _os_wakeup_sleeping_task(void *arg) {
+	eos_tcb_t *task = arg;
+	_os_node_t *new_node = malloc(sizeof(_os_node_t));
+	new_node->ptr_data = (void *)task;
+	new_node->priority = task->priority;
+	_os_add_node_tail(&(_os_ready_queue[task->priority]), new_node);
+	_os_set_ready((task->priority) & 0xFF);
 }
