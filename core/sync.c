@@ -9,6 +9,7 @@
 
 void eos_init_semaphore(eos_semaphore_t *sem, int32u_t initial_count, int8u_t queue_type) {
 	sem->count = initial_count;
+	sem->wait_queue = NULL;
 	sem->queue_type = queue_type;
 }
 
