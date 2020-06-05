@@ -44,7 +44,7 @@ static void receiver_task1(void *arg) {
 	int8u_t data[2];
 
 	while (1) {
-		eos_receive_message(&mq1, data, 10);
+		eos_receive_message(&mq1, data, 0);
 		PRINT("received message: %s\n", data);
 		print_status(&mq1, &mq2);
 		eos_sleep(0);
@@ -55,7 +55,7 @@ static void receiver_task2(void *arg) {
 	int8u_t data[2];
 
 	while (1) {
-		eos_receive_message(&mq2, data, 10);
+		eos_receive_message(&mq2, data, 0);
 		PRINT("received message: %s\n", data);
 		print_status(&mq1, &mq2);
 		eos_sleep(0);
