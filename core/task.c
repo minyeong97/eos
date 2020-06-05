@@ -44,7 +44,7 @@ int32u_t eos_destroy_task(eos_tcb_t *task) {
 void eos_schedule() {
 	if(_os_current_task != NULL)
 	{
-		PRINT("saving context of task: %p \n", _os_current_task);
+		//PRINT("saving context of task: %p \n", _os_current_task);
 		// if there is task running, save task, update tcb
 		addr_t sp = _os_save_context();
 		if(sp == NULL) return;
@@ -58,7 +58,7 @@ void eos_schedule() {
 	// remove from ready queue
 	_os_node_t *node = _os_ready_queue[priority];
 	_os_current_task = (eos_tcb_t*)(node->ptr_data);
-	PRINT("ready to run task: %p \n", _os_current_task);
+	//PRINT("ready to run task: %p \n", _os_current_task);
 	_os_remove_node(&(_os_ready_queue[priority]), node);
 	free(node);
 	

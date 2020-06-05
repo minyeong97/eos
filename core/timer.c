@@ -37,10 +37,10 @@ eos_counter_t* eos_get_system_timer() {
 }
 
 void eos_trigger_counter(eos_counter_t* counter) {
-	PRINT("tick\n");
 
 	// update tick
 	counter->tick++;
+	PRINT("--------------------tick: %d---------------------\n", counter->tick);
 	// push interrupted task in to ready queue(because it does not have to wait)
 	_os_wakeup_sleeping_task((void*)eos_get_current_task());
 

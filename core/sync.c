@@ -16,38 +16,72 @@ int32u_t eos_acquire_semaphore(eos_semaphore_t *sem, int32s_t timeout) {
 	int32u_t flag = eos_disable_interrupt();
 
 	while(1) {
+		// resource available
 		if(sem->count > 0) {
 			sem->count--;
-			PRINT("acquired semaphore, now: %d \n", sem->count);
 			eos_restore_interrupt(flag);
+
+			extern eos_mqueue_t mq1;
+			extern eos_mqueue_t mq2;
+
+			if(sem == &(mq1.getsem)) {
+				PRINT("%-15s%33s\n", "mq1 [receive]", "success");
+			} else if(sem == &(mq2.getsem)) {
+				PRINT("%-15s%33s\n", "mq2 [receive]", "success");
+			} else if(sem == &(mq1.putsem)) {
+				PRINT("%-15s%33s\n", "mq1 [send]", "success");
+			} else if(sem == &(mq2.putsem)) {
+				PRINT("%-15s%33s\n", "mq2 [send]", "success");
+			}
+
 			return 1;
-		}
+		} else {
+			// not available
 
-		if(timeout == -1) {
-			eos_restore_interrupt(flag);
-			return 0;
-		}
+			extern eos_mqueue_t mq1;
+			extern eos_mqueue_t mq2;
 
-		if(timeout == 0) {
-			PRINT("failed acquiring semaphore, sleep\n");
-			PRINT("saving to queue: %p \n", sem->wait_queue);
-			_os_node_t *new_node = malloc(sizeof(_os_node_t));
-			new_node->ptr_data = (void *)eos_get_current_task();
-			new_node->priority = eos_get_current_task()->priority;
+			if(sem == &(mq1.getsem)) {
+				PRINT("%-15s%33s\n", "mq1 [receive]", "failed");
+			} else if(sem == &(mq2.getsem)) {
+				PRINT("%-15s%33s\n", "mq2 [receive]", "failed");
+			} else if(sem == &(mq1.putsem)) {
+				PRINT("%-15s%33s\n", "mq1 [send]", "failed");
+			} else if(sem == &(mq2.putsem)) {
+				PRINT("%-15s%33s\n", "mq2 [send]", "failed");
+			}
 
-			if(sem->queue_type) 
-				_os_add_node_priority(&(sem->wait_queue), new_node);
-			else
-				_os_add_node_tail(&(sem->wait_queue), new_node);
-			PRINT("saved to queue: %p \n", sem->wait_queue);
+			if(timeout == -1) {
+				// can't wait
 
-			eos_schedule();
-		}
+				eos_restore_interrupt(flag);
+				return 0;
 
-		if(timeout > 0) {
-			extern system_timer;
-			eos_alarm_t *alarm = malloc(sizeof(eos_alarm_t));
-			eos_set_alarm(eos_get_system_timer(), alarm, timeout, _os_wakeup_sleeping_task, eos_get_current_task());
+			} else if(timeout == 0) {
+				// goto ready queue immediately
+
+				_os_node_t *new_node = malloc(sizeof(_os_node_t));
+				new_node->ptr_data = (void *)eos_get_current_task();
+				new_node->priority = eos_get_current_task()->priority;
+
+				if(sem->queue_type) 
+					_os_add_node_priority(&(sem->wait_queue), new_node);
+				else
+					_os_add_node_tail(&(sem->wait_queue), new_node);
+
+				eos_schedule();
+
+			} else if(timeout > 0) {
+				// wait (timeout) secs until being ready
+				//
+				extern system_timer;
+				eos_alarm_t *alarm = malloc(sizeof(eos_alarm_t));
+				eos_set_alarm(eos_get_system_timer(), alarm, timeout, _os_wakeup_sleeping_task, eos_get_current_task());
+				eos_schedule();
+				// if returned after sleep, make timeout zero and be ready
+				timeout = 0;
+
+			}
 		}
 	}
 	
@@ -68,7 +102,6 @@ void eos_release_semaphore(eos_semaphore_t *sem) {
 		free(node);
 	}
 
-	eos_schedule();
 	eos_restore_interrupt(flag);
 }
 
