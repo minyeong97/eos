@@ -13,10 +13,8 @@ void eos_init_mqueue(eos_mqueue_t *mq, void *queue_start, int16u_t queue_size, i
 	mq->queue_start = queue_start;
 	mq->front = queue_start;
 	mq->rear = queue_start;
-	mq->putsem.count = queue_size;
-	mq->putsem.queue_type = queue_type;
-	mq->getsem.count = 0;
-	mq->getsem.queue_type = queue_type;
+	eos_init_semaphore(&(mq->putsem), queue_size, queue_type);
+	eos_init_semaphore(&(mq->getsem), 0, queue_type);
 }
 
 int8u_t eos_send_message(eos_mqueue_t *mq, void *message, int32s_t timeout) {
